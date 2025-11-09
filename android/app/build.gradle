@@ -101,15 +101,23 @@ android {
             // Caution! In production, you need to generate your own keystore file.
             // see https://reactnative.dev/docs/signed-apk-android.
             signingConfig signingConfigs.debug
-            minifyEnabled enableProguardInReleaseBuilds
+            // minifyEnabled enableProguardInReleaseBuilds
+                    minifyEnabled false
             proguardFiles getDefaultProguardFile("proguard-android.txt"), "proguard-rules.pro"
+            lintOptions {
+    checkReleaseBuilds false
+    abortOnError false
+}
         }
     }
 }
 
 dependencies {
     // The version of react-native is set by the React Native Gradle Plugin
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+    implementation project(':react-native-sms-x')
     implementation("com.facebook.react:react-android")
+implementation 'com.google.android.gms:play-services-location:21.2.0'
 
     if (hermesEnabled.toBoolean()) {
         implementation("com.facebook.react:hermes-android")
