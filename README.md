@@ -1,3 +1,18 @@
+To run the app
+
+npm install in root directory
+
+then
+
+cd andriod
+
+gradlew clean
+
+cd ..
+
+npx react-native run-android
+
+
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
 
 # Getting Started
